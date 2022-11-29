@@ -8,7 +8,10 @@ RUN pip uninstall -y torch-geometric
 RUN pip install torch-geometric==1.7.2
 RUN echo "source activate $(head -1 /tmp/environment_cpu.yml | cut -d' ' -f2)" > ~/.bashrc
 ENV PATH /opt/conda/envs/$(head -1 /tmp/environment_cpu.yml | cut -d' ' -f2)/bin:$PATH
+RUN pip install uvicorn shutil pydantic starlette
 COPY . /d4/
 # to make a docker image run in your terminal: docker build -t <name of that image> .
-# to run the docker image: docker run -it <name of that image>
-# this should open up a prompt with `synthenv` already activated
+# to run the docker image: docker run -it <name of that image> -p 8000:8000
+# this should open up a prompt with environment already activated
+WORKDIR /d4/GraphBP
+CMD uvicorn main_eval:app --proxy-headers --host 0.0.0.0 --port 8000
