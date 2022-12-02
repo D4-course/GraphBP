@@ -1,7 +1,9 @@
 # Team 18
 Yash Mehan 2020111020 
 Jatin Agarwala 2020111011
-Youtube videdo: https://youtu.be/wIJuuo61qyA [https://youtu.be/wIJuuo61qyA] (https://youtu.be/wIJuuo61qyA)
+Youtube videdo: [https://youtu.be/A2hVu4CIG4Q](https://youtu.be/A2hVu4CIG4Q)
+## postman response header
+![](postman-response-header.png) 
 # Generating 3D Molecules for Target Protein Binding
 This is the official implementation of the **GraphBP** method proposed in the following paper.
 
